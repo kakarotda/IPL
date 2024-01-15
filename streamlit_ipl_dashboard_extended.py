@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 
 # Function to load data (placeholder, replace with actual data loading function)
-@st.cache
+@st.cache_data
 def load_data():
     data = pd.DataFrame({
         'Team': ['Chennai Super Kings', 'Deccan Chargers', 'Delhi Capitals', 'Gujarat Lions', 'Gujarat Titans'],
