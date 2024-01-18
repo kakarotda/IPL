@@ -51,3 +51,21 @@ if st.button('Predict Winner'):
     if not team1_data.empty and not team2_data.empty:
         winner = team1 if team1_data['Winning Percentage'].values[0] > team2_data['Winning Percentage'].values[0] else team2
         st.success(f'The predicted winner is: {winner}')
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+# Function to plot win/loss ratio
+def plot_win_loss_ratio(df):
+    df['Win/Loss Ratio'] = df['Won'] / df['Lost'].replace(0, np.nan)
+    df.sort_values('Win/Loss Ratio', ascending=True, inplace=True)
+    fig, ax = plt.subplots()
+    ax.barh(df['Team'], df['Win/Loss Ratio'], color='skyblue')
+    ax.set_xlabel('Win/Loss Ratio')
+    ax.set_title('Win to Loss Ratio of IPL Teams')
+    return fig
+
+# Plotting the win/loss ratio
+st.write("Win/Loss Ratio of IPL Teams:")
+win_loss_fig = plot_win_loss_ratio(ipl_data_with_percentage)
+st.pyplot(win_loss_fig)
