@@ -4,8 +4,8 @@ import pandas as pd
 
 # Function to load data from the Excel file
 @st.cache
-def load_data(filepath):
-    data = pd.read_excel(filepath)
+def load_data(IPL DATA.xlsx):
+    data = pd.read_excel(IPL DATA.xlsx)
     return data
 
 # Function to calculate winning percentage
