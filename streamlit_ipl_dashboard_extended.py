@@ -6,14 +6,15 @@ import pandas as pd
 @st.cache_data
 def load_data():
     data = pd.DataFrame({
-        'Team': ['Chennai Super Kings', 'Deccan Chargers', 'Delhi Capitals', 'Gujarat Lions', 'Gujarat Titans'],
-        'Matches Played': [225, 75, 238, 30, 33],
-        'Won': [131, 29, 105, 13, 23],
-        'Lost': [91, 46, 127, 16, 10],
-        'Draw': [0, 0, 0, 0, 0],
-        'Tied': [0, 0, 0, 0, 0]
+        'Team': ['Chennai Super Kings', 'Deccan Chargers', 'Delhi Capitals', 'Gujarat Lions', 'Gujarat Titans', 'Kochi Tuskers Kerala', 'Kolkata Knight Riders', 'Lucknow Super Giants', 'Mumbai Indians', 'Pune Warriors', 'Punjab Kings', 'Rajasthan Royals', 'Rising Pune Supergiant', 'Royal Challengers Bangalore', 'Sunrisers Hyderabad'],
+        'Matches Played': [225, 75, 238, 30, 33, 14, 237, 30, 247, 46, 232, 206, 30, 241, 166],
+        'Won': [131, 29, 105, 13, 23, 6, 119, 17, 138, 12, 104, 101, 15, 114, 78],
+        'Lost': [91, 46, 127, 16, 10, 8, 114, 12, 105, 33, 124, 100, 15, 120, 84],
+        'Draw': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        'Tied': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     })
     return data
+
 
 # Function to calculate winning percentage
 def calculate_winning_percentage(df):
