@@ -34,6 +34,10 @@ st.title('IPL Team Performance Dashboard')
 st.write("IPL Team Data:")
 st.dataframe(ipl_data_with_percentage)
 
+# Bar Chart for Total Wins
+st.write("Total Wins by Team:")
+st.bar_chart(ipl_data_with_percentage[['Team', 'Won']].set_index('Team'))
+
 # Allow users to select two teams to compare
 team1 = st.selectbox('Select Team 1:', ipl_data_with_percentage['Team'].unique())
 team2 = st.selectbox('Select Team 2:', ipl_data_with_percentage['Team'].unique())
