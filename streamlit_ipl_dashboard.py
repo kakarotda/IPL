@@ -1,8 +1,6 @@
-pip install matplotlib
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 
 # Function to load data
 @st.cache
@@ -70,3 +68,8 @@ def plot_win_loss_ratio(df):
 st.write("Win/Loss Ratio of IPL Teams:")
 win_loss_fig = plot_win_loss_ratio(ipl_data_with_percentage)
 st.pyplot(win_loss_fig)
+
+# Assuming ipl_data_with_percentage is your main DataFrame
+
+# Simple Bar Chart for Total Wins
+st.bar_chart(ipl_data_with_percentage[['Team', 'Won']].set_index('Team'))
